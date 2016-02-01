@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Estoque\Http\Requests;
 use Estoque\User;
 use Redirect;
+use session;
 
 class UsuarioController extends Controller
 {
@@ -78,9 +79,10 @@ class UsuarioController extends Controller
      */
     public function update(UserUpdateRequest $request, $id)
     {
-         $this->user->fill($request->all());
-         $this->user->save();
-         Session::flash('message','Usuario Atualizado Corretamente');
+          $user = User::find($id);
+          $user->fill($request->all());
+          $user->save();
+        //  Session::flash('message','Usuario Atualizado Corretamente');
          return Redirect::to('/usuario');
     }
 
