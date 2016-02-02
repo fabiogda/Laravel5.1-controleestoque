@@ -80,7 +80,10 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->fill($request->all());
+        $product->save();
+        return Redirect::to('/product');
     }
 
     /**
@@ -91,6 +94,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Product::destroy($id);
+        return Redirect::to('/product');
     }
 }

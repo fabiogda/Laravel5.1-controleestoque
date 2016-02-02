@@ -5,7 +5,7 @@
 			{!!Form::submit('Atualizar',['class'=>'btn btn-primary'])!!}
 				{!!Form::close()!!}
 <br>
-		{!!Form::open(['route'=> ['product.destroy',$product->id],'method'=>'PUT'])!!}
+		{!!Form::open(['route'=> ['product.destroy',$product->id],'method'=>'DELETE'])!!}
 				{!!Form::submit('Deletar',['class'=>'btn btn-danger'])!!}
 		{!!Form::close()!!}
 

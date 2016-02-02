@@ -17,7 +17,7 @@
       <td> {{$product->quantity}}</td>
       <td> {{$product->description}}</td>
       <td>
-       {!!link_to_route('product.edit', $title = 'Editar',$parameters  = $product->id, $atributes = ['class'=>'btn btn-primary'])!!}
+       {!!link_to_route('product.edit', $title = ' Editar',$parameters  = $product->id, $atributes = ['class'=>'btn btn-primary fa fa-pencil'])!!}
       </td>
     </tbody>
     @endforeach
