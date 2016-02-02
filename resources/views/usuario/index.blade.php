@@ -13,7 +13,6 @@
 					<td> {{$user->email}} </td>
 					<td>
 						 {!!link_to_route('usuario.edit', $title = 'Editar',$parameters  = $user->id, $atributes = ['class'=>'btn btn-primary'])!!}
-						 {!!link_to_route('usuario.destroy', $title = 'Deletar',$parameters  = $user->id ,$atributes = ['class'=>'btn btn-danger'] )!!}
 					</td>
 				</tbody>
 				@endforeach

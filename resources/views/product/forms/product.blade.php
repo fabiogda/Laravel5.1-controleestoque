@@ -7,8 +7,8 @@
 	{!!Form::text('price',null,['class'=>'form-control', 'placeholder'=>'Insira Preço do produto '])!!}
 </div>
 <div class="form-group">
-	{!!Form::label('Quantity','Quantidade:')!!}
-	{!!Form::text('Quantity',null,['class'=>'form-control', 'placeholder'=>'Digite a quantidade desse produto'])!!}
+	{!!Form::label('quantity','Quantidade:')!!}
+	{!!Form::text('quantity',null,['class'=>'form-control', 'placeholder'=>'Digite a quantidade desse produto'])!!}
 </div>
 <div class="form-group">
 	{!!Form::label('description','Descrição:')!!}

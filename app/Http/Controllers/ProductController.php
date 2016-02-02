@@ -2,10 +2,15 @@
 
 namespace Estoque\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use Estoque\Http\Requests;
 use Estoque\Http\Controllers\Controller;
+use Illuminate\Routing\Route;
+use Illuminate\Http\Request;
+use Estoque\Http\Requests;
+use Redirect;
+use Session;
+use Estoque\Product;
+
+
 
 class ProductController extends Controller
 {
@@ -16,7 +21,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('product.index');
+        $products = Product::all();
+        return view('product.index',compact('products'));
     }
 
     /**
@@ -26,6 +32,7 @@ class ProductController extends Controller
      */
     public function create()
     {
+
         return view('product.create');
     }
 
@@ -37,7 +44,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       Product::create($request->all());
+       return Redirect::to('/product');
     }
 
     /**
@@ -59,7 +67,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        return view('product.edit');
+        $product = Product::find($id);
+        return view('product.edit', ['product'=>$product]);
     }
 
     /**
