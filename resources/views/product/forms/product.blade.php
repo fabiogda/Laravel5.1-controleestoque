@@ -14,4 +14,7 @@
 	{!!Form::label('description','Descrição:')!!}
 	{!!Form::textarea('description',null,['class'=>'form-control', 'placeholder'=>'Insira a descrição do produto'])!!}
 </div>
- 
+<div class="form-group">
+	{!!Form::label('poster','Imagen do Produto:')!!}
+	{!!Form::file('path')!!}
+</div>

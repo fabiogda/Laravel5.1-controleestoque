@@ -20,3 +20,5 @@ Route::get('admin','FrontController@admin');
 
 Route::resource('usuario','UsuarioController');
 Route::resource('product','ProductController');
+
+Route::resource('log','LogController');

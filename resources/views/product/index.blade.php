@@ -8,6 +8,7 @@
     <th>Preço</th>
     <th>Quantidade</th>
     <th>Descrição</th>
+    <th> Imagem </th>
     <th> Opções </th>
   </thead>
     @foreach($products as $product )
@@ -16,6 +17,9 @@
       <td> {{$product->price}}</td>
       <td> {{$product->quantity}}</td>
       <td> {{$product->description}}</td>
+      <td>
+        <img src="img_produtos/{{$product->path}}" alt="Imagem do Produto Selecionado" style="width:100px;"/>
+      </td>
       <td>
        {!!link_to_route('product.edit', $title = ' Editar',$parameters  = $product->id, $atributes = ['class'=>'btn btn-primary fa fa-pencil'])!!}
       </td>
