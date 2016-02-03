@@ -35,7 +35,7 @@
             {!!Form::close()!!}
             {!!link_to('password/email', $title = 'Esqueceu a senha?', $attributes = null, $secure = null)!!}
           </div>
-          <p><br/></p>
+          <p><br/></p> 
         </div>
       </div>
     </div>
