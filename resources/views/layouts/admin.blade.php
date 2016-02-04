@@ -61,7 +61,7 @@
                                 </li>
                             </ul>
                         </li>
-
+                        
                         <li>
                             <a href="#"><i class="fa fa-barcode"> </i> Produto<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -73,10 +73,20 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="#"><i class="fa fa-tags"> </i> Vendas <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{!!URL::to('/admin')!!}"><i class='fa fa-plus fa-fw'></i> Cadastrar Venda</a>
+                                </li>
+                                <li>
+                                    <a href="{!!URL::to('/admin')!!}"><i class='fa fa-list-ol fa-fw'></i>Lista Todas as Vendas</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
-
      </nav>
 
         <div id="page-wrapper">
