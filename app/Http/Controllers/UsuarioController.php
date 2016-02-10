@@ -11,6 +11,7 @@ use Estoque\Http\Requests;
 use Estoque\User;
 use Redirect;
 use session;
+use DB;
 
 class UsuarioController extends Controller
 {
@@ -21,8 +22,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $users = User::All();
-        return view('usuario.index',compact('users'));
+      $users = User::paginate(5);
+      return view('usuario.index',compact('users'));
     }
 
     /**

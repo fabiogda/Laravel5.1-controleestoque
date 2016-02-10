@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 
@@ -18,7 +18,6 @@
 
     <div id="wrapper">
 
-
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -34,7 +33,7 @@
             <ul class="nav navbar-top-links navbar-right">
                  <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                      {!!Auth::user()->name!!}<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Ajustes</a>
@@ -49,7 +48,7 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-
+                      @if(Auth::User()->id == 1)
                         <li>
                             <a href="#"><i class="fa fa-users fa-fw"></i> Usuario<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -61,7 +60,7 @@
                                 </li>
                             </ul>
                         </li>
-                        
+                        @endif
                         <li>
                             <a href="#"><i class="fa fa-barcode"> </i> Produto<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -77,10 +76,10 @@
                             <a href="#"><i class="fa fa-tags"> </i> Vendas <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{!!URL::to('/admin')!!}"><i class='fa fa-plus fa-fw'></i> Cadastrar Venda</a>
+                                    <a href="{!!URL::to('#')!!}"><i class='fa fa-plus fa-fw'></i> Cadastrar Venda</a>
                                 </li>
                                 <li>
-                                    <a href="{!!URL::to('/admin')!!}"><i class='fa fa-list-ol fa-fw'></i>Lista Todas as Vendas</a>
+                                    <a href="{!!URL::to('#')!!}"><i class='fa fa-list-ol fa-fw'></i>Lista Todas as Vendas</a>
                                 </li>
                             </ul>
                         </li>

@@ -17,7 +17,7 @@
 				</tbody>
 				@endforeach
 		</table>
-
+		{!!$users->render()!!}
 	</div>
   @endsection
 	@section('scripts')

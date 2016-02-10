@@ -1,0 +1,62 @@
+[33mcommit ff7b3c7de4fbadfa50f7af4c3bfe866798079771[m
+Merge: 9e8f2bd fe5449c
+Author: Alef Junio Pereira da Silva <bboy_alef@hotmail.com>
+Date:   Thu Feb 4 18:39:35 2016 -0200
+
+    Merge pull request #1 from alephjunio/login
+    
+    Login Autenticação
+
+[33mcommit fe5449cee2b011603abf818deb6764ffce97bfe1[m
+Author: alefsilva <alefsilva@prefeitura.sp.gov.br>
+Date:   Wed Feb 3 16:03:54 2016 -0200
+
+    Contruindo autenticação de login
+
+[33mcommit 65f27f09586bc2c95efd0c7cc120f149789e4126[m
+Author: alefsilva <alefsilva@prefeitura.sp.gov.br>
+Date:   Wed Feb 3 16:01:22 2016 -0200
+
+    construindo area de login
+
+[33mcommit de8e755de233c71bb51c77ddaee71cc390125541[m
+Author: alefsilva <alefsilva@prefeitura.sp.gov.br>
+Date:   Wed Feb 3 10:49:52 2016 -0200
+
+    Subir arquivo de imagem do produto
+
+[33mcommit 1140d59ff73b274dec2e8e7ef303424a0fb463b3[m
+Author: alefsilva <alefsilva@prefeitura.sp.gov.br>
+Date:   Wed Feb 3 10:49:06 2016 -0200
+
+    Subir Arquivo de Imagem do produto
+
+[33mcommit f5239c59989bb336339059fc192fa7e80894002f[m
+Author: alefsilva <alefsilva@prefeitura.sp.gov.br>
+Date:   Tue Feb 2 14:45:55 2016 -0200
+
+    Update e atualizar produtos OK
+
+[33mcommit 1d6343bf0b8dd121254014950303cc3f6fcd6e7b[m
+Author: alefsilva <alefsilva@prefeitura.sp.gov.br>
+Date:   Tue Feb 2 13:16:38 2016 -0200
+
+    Listagem de produtos ok
+
+[33mcommit bca3f9f6996ba1447d4e831c62fbf271c3cb84dd[m
+Author: alefsilva <alefsilva@prefeitura.sp.gov.br>
+Date:   Tue Feb 2 13:15:27 2016 -0200
+
+    Listagem de Produtos OK
+
+[33mcommit 9e8f2bdad60e9822bf40780d69991b7f8df2f4ec[m
+Author: alefsilva <alefsilva@prefeitura.sp.gov.br>
+Date:   Mon Feb 1 15:21:53 2016 -0200
+
+    Corrigido a Atualização de Usuario
+
+[33mcommit 8d8f5c47a853b9c5a6a083ff12efd362ee0e3fe4[m
+Author: alefsilva <alefsilva@prefeitura.sp.gov.br>
+Date:   Mon Feb 1 13:40:24 2016 -0200
+
+    em andamento

@@ -26,5 +26,8 @@
     </tbody>
     @endforeach
 </table>
+
 </div>
+{!!$products->render()!!}
+
 @endsection
