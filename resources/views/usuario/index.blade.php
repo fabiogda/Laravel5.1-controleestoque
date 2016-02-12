@@ -5,7 +5,7 @@
 			<thead>
 				<th>Nome</th>
 				<th>E-mail</th>
-				<th>Opções</th>
+				<th>Operações</th>
 			</thead>
 			@foreach($users as $user)
 			<tbody>

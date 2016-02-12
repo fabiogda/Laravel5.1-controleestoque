@@ -9,7 +9,7 @@
     <th>Quantidade</th>
     <th>Descrição</th>
     <th> Imagem </th>
-    <th> Opções </th>
+    <th> Operações </th>
   </thead>
     @foreach($products as $product )
     <tbody>
