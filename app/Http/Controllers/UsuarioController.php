@@ -80,7 +80,7 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserUpdateRequest $request, $id)
+    public function update(UserUpdateRequest $request, $id) 
     {
           $user = User::find($id);
           $user->fill($request->all());
