@@ -1,7 +1,5 @@
 <?php
-
 namespace Estoque\Http\Controllers;
-
 use Estoque\Http\Requests\UserCreateRequest;
 use Estoque\Http\Requests\UserUpdateRequest;
 use Estoque\Http\Controllers\Controller;
@@ -10,12 +8,10 @@ use Illuminate\Http\Request;
 use Estoque\Http\Requests;
 use Estoque\User;
 use Redirect;
-use session;
+use Session;
 use DB;
-
 class UsuarioController extends Controller
 {
-
       public function __construct(){
         $this->middleware('auth');
         $this->middleware('admin',['only' => ['create','edit']]);
@@ -23,6 +19,8 @@ class UsuarioController extends Controller
     }
     public function find(Route $route){
         $this->user = User::find($route->getParameter('usuario'));
+        $this->notFound($this->user);
+
     }
     /**
      * Display a listing of the resource.
@@ -34,7 +32,6 @@ class UsuarioController extends Controller
       $users = User::paginate(5);
       return view('usuario.index',compact('users'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -44,7 +41,6 @@ class UsuarioController extends Controller
     {
         return view('usuario.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -54,9 +50,9 @@ class UsuarioController extends Controller
     public function store(UserCreateRequest $request)
     {
               User::create($request->all());
+              Session::flash('message','Usuario criado com sucesso');
               return Redirect::to('/usuario');
             }
-
     /**
      * Display the specified resource.
      *
@@ -65,9 +61,7 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -77,9 +71,8 @@ class UsuarioController extends Controller
     public function edit($id)
     {
           $user = User::find($id);
-        return view('usuario.edit',['user'=>$user]);
+          return view('usuario.edit',['user'=>$user]);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -92,10 +85,9 @@ class UsuarioController extends Controller
           $user = User::find($id);
           $user->fill($request->all());
           $user->save();
-        //  Session::flash('message','Usuario Atualizado Corretamente');
+        Session::flash('message','Usuario Atualizado Corretamente');
          return Redirect::to('/usuario');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -105,6 +97,7 @@ class UsuarioController extends Controller
     public function destroy($id)
     {
           User::destroy($id);
+          Session::flash('message','Usuario excluido com sucesso');
           return Redirect::to('/usuario');
     }
 }

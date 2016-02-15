@@ -1,7 +1,5 @@
 <?php
-
 namespace Estoque\Http\Controllers;
-
 use Estoque\Http\Controllers\Controller;
 use Illuminate\Routing\Route;
 use Illuminate\Http\Request;
@@ -9,11 +7,17 @@ use Estoque\Http\Requests;
 use Redirect;
 use Session;
 use Estoque\Product;
-
-
-
 class ProductController extends Controller
 {
+  public function __construct(){
+    $this->middleware('auth');
+    $this->middleware('admin');
+    $this->beforeFilter('@find',['only' => ['edit','update','destroy']]);
+  }
+      public function find(Route $route){
+          $this->product = Product::find($route->getParameter('product'));
+            $this->notFound($this->product);
+      }
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +28,6 @@ class ProductController extends Controller
         $products = Product::paginate(5);
         return view('product.index',compact('products'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -32,10 +35,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-
         return view('product.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -47,7 +48,6 @@ class ProductController extends Controller
        Product::create($request->all());
        return Redirect::to('/product');
     }
-
     /**
      * Display the specified resource.
      *
@@ -58,7 +58,6 @@ class ProductController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -70,7 +69,6 @@ class ProductController extends Controller
         $product = Product::find($id);
         return view('product.edit', ['product'=>$product]);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -85,7 +83,6 @@ class ProductController extends Controller
         $product->save();
         return Redirect::to('/product');
     }
-
     /**
      * Remove the specified resource from storage.
      *
