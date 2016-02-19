@@ -31,7 +31,6 @@
       <ul>
           <ol class="Center"> Objeto não encontrado  !</ol>
           <ol class="Center"> Volte para pagina anterior </ol>
-          <ol class="Center"> <a href="/usuario/" class="btn btn-larger btn-danger ">Voltar</a></ol>
         </ul>
         <div class="panel-body">
           <div class="img">

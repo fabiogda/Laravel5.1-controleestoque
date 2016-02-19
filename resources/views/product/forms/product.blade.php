@@ -15,6 +15,6 @@
 	{!!Form::textarea('description',null,['class'=>'form-control', 'placeholder'=>'Descrição do produto'])!!}
 </div>
 <div class="form-group">
-	{!!Form::label('poster','Imagen do Produto:')!!}
-	{!!Form::file('path')!!}
+	{!!Form::label('poster','Selecionar imagem')!!}
+	{!!Form::file('path',['class'=>'file-loading'])!!}
 </div>

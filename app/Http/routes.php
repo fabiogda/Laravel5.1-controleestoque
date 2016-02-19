@@ -19,6 +19,8 @@ Route::get('admin','FrontController@admin');
 
 Route::resource('usuario','UsuarioController');
 Route::resource('product','ProductController');
+Route::resource('entries','EntriesController');
+
 
 Route::get('logout','LogController@logout');
 Route::resource('log','LogController');

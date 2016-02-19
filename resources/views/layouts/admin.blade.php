@@ -2,7 +2,6 @@
 <html lang="pt-br">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,10 +52,10 @@
                             <a href="#"><i class="fa fa-users fa-fw"></i> Usuario<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{!!URL::to('/usuario/create')!!}"><i class='fa fa-plus fa-fw'></i>Inserir</a>
+                                    <a href="{!!URL::to('/usuario/create')!!}"><i class='fa fa-plus fa-fw'></i>Registrar</a>
                                 </li>
                                 <li>
-                                    <a href="{!!URL::to('/usuario')!!}"><i class='fa fa-list-ol fa-fw'></i> Lista de Usuarios</a>
+                                    <a href="{!!URL::to('/usuario')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Usuarios</a>
                                 </li>
                             </ul>
                         </li>
@@ -65,10 +64,21 @@
                             <a href="#"><i class="fa fa-barcode"> </i> Produto<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{!!URL::to('/product/create')!!}"><i class='fa fa-plus fa-fw'></i> Inserir</a>
+                                    <a href="{!!URL::to('/product/create')!!}"><i class='fa fa-plus fa-fw'></i> Registrar</a>
                                 </li>
                                 <li>
-                                    <a href="{!!URL::to('/product')!!}"><i class='fa fa-list-ol fa-fw'></i>Lista de Produtos</a>
+                                    <a href="{!!URL::to('/product')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Produtos</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table"> </i> Estoque <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{!!URL::to('/entries/create')!!}"><i class='fa fa-plus fa-fw'></i> Registrar item</a>
+                                </li>
+                                <li>
+                                    <a href="{!!URL::to('/entries')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Estoque</a>
                                 </li>
                             </ul>
                         </li>
@@ -76,10 +86,10 @@
                             <a href="#"><i class="fa fa-tags"> </i> Vendas <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{!!URL::to('#')!!}"><i class='fa fa-plus fa-fw'></i> Cadastrar Venda</a>
+                                    <a href="{!!URL::to('#')!!}"><i class='fa fa-plus fa-fw'></i> Registrar Venda</a>
                                 </li>
                                 <li>
-                                    <a href="{!!URL::to('#')!!}"><i class='fa fa-list-ol fa-fw'></i>Lista Todas as Vendas</a>
+                                    <a href="{!!URL::to('#')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Vendas</a>
                                 </li>
                             </ul>
                         </li>

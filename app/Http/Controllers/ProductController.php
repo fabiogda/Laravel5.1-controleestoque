@@ -1,5 +1,6 @@
 <?php
 namespace Estoque\Http\Controllers;
+
 use Estoque\Http\Controllers\Controller;
 use Illuminate\Routing\Route;
 use Illuminate\Http\Request;
@@ -7,6 +8,8 @@ use Estoque\Http\Requests;
 use Redirect;
 use Session;
 use Estoque\Product;
+use Estoque\Entries;
+
 class ProductController extends Controller
 {
   public function __construct(){
