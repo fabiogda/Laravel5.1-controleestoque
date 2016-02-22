@@ -25,7 +25,7 @@ class EntriesController extends Controller
   public function index()
   {
 
-    $products = Entries::paginate(5);
+    $products = Product::paginate(5);
     return view('entries.index',compact('products'));
 
   }
@@ -51,8 +51,14 @@ class EntriesController extends Controller
   {
     $product = $request->all();
     $product['users_id'] = Auth::user()->id;
-    Entries::create($product);
-    return Redirect::to('/entries');
+    if (Entries::create($product)) {
+      $quantity = Product::find($product['products_id'])->get(['quantity']);
+      print_r($quantity);
+      //$quantity += $product['quantity'];
+    //  Product::where('id',$product['products_id'])
+    //  ->update(['quantity' => $quantity]);
+    }
+  //  return Redirect::to('/entries');
 
   }
 

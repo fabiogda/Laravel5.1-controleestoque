@@ -10,7 +10,7 @@ use DB;
 class product extends Model
 {
     protected $table = "products";
-    protected $fillable = ['name','price','quantity','description','path'];
+    protected $fillable = ['category_id','name','price','quantity','description','path'];
 
     public function setPathAttribute($path){
       if (!empty($path)) {

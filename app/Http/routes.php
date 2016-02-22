@@ -20,6 +20,7 @@ Route::get('admin','FrontController@admin');
 Route::resource('usuario','UsuarioController');
 Route::resource('product','ProductController');
 Route::resource('entries','EntriesController');
+Route::resource('category','CategoryController');
 
 
 Route::get('logout','LogController@logout');

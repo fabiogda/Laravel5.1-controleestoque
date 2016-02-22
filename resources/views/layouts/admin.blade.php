@@ -61,6 +61,17 @@
                         </li>
                         @endif
                         <li>
+                            <a href="#"><i class="fa fa-filter"> </i> Categoria <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{!!URL::to('/category/create/')!!}"><i class='fa fa-plus fa-fw'></i> Registrar uma categoria</a>
+                                </li>
+                                <li>
+                                    <a href="{!!URL::to('/category')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Categorias</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
                             <a href="#"><i class="fa fa-barcode"> </i> Produto<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>

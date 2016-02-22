@@ -1,5 +1,5 @@
 <div class="form-group">
-	{!!Form::label('name','Nome do produto')!!}
+	{!!Form::label('products_id','Nome do produto')!!}
 	{!!Form::select('products_id',$product)!!}
 </div>
 <div class="form-group">
