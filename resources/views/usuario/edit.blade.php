@@ -7,7 +7,7 @@
 	{!!Form::close()!!}
 <br>
 	{!!Form::open(['route'=>['usuario.destroy',$user->id],'method'=>'DELETE'])!!}
-			{!!Form::submit('Deletar',['class'=>'btn btn-danger'])!!}
+			{!!Form::submit('Deletar',['class'=>'btn btn-danger fa fa-trash-o'])!!}
 	{!!Form::close()!!}
 
 @endsection

@@ -13,7 +13,8 @@
 					<td> {{$user->name}} </td>
 					<td> {{$user->email}} </td>
 					<td>
-						 {!!link_to_route('usuario.edit', $title = 'Editar',$parameters  = $user->id, $atributes = ['class'=>'btn btn-primary fa fa-pencil'])!!}
+						 {!!link_to_route('usuario.edit', $title = '',$parameters  = $user->id, $atributes = ['class'=>'btn btn-primary fa fa-pencil'])!!}
+						  {!!link_to_route('usuario.edit', $title = '',$parameters  = $user->id, $atributes = ['class'=>'btn btn-danger fa fa-trash-o'])!!}
 					</td>
 				</tbody>
 				@endforeach

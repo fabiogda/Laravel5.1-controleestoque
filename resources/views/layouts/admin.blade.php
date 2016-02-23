@@ -86,7 +86,7 @@
                             <a href="#"><i class="fa fa-table"> </i> Estoque <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{!!URL::to('/entries/create')!!}"><i class='fa fa-plus fa-fw'></i> Registrar item</a>
+                                    <a href="{!!URL::to('/entries/create')!!}"><i class='fa fa-plus fa-fw'></i> Adicionar item</a>
                                 </li>
                                 <li>
                                     <a href="{!!URL::to('/entries')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Estoque</a>
@@ -97,10 +97,7 @@
                             <a href="#"><i class="fa fa-tags"> </i> Vendas <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{!!URL::to('#')!!}"><i class='fa fa-plus fa-fw'></i> Registrar Venda</a>
-                                </li>
-                                <li>
-                                    <a href="{!!URL::to('#')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Vendas</a>
+                                    <a href="{!!URL::to('/outputs')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Vendas</a>
                                 </li>
                             </ul>
                         </li>

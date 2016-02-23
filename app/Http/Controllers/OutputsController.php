@@ -16,7 +16,7 @@ use Session;
 use DB;
 use Auth;
 
-class EntriesController extends Controller
+class OutputsController extends Controller
 {
   /**
   * Display a listing of the resource.
@@ -25,12 +25,8 @@ class EntriesController extends Controller
   */
   public function index()
   {
-
-    $products = Product::paginate(5);
-    return view('entries.index',compact('products'));
-
+    return view('outputs.index');
   }
-
   /**
   * Show the form for creating a new resource.
   *
@@ -38,8 +34,10 @@ class EntriesController extends Controller
   */
   public function create()
   {
-    $product = Product::lists('name','id');
-    return view('entries.create',compact('product'));
+    $param = Request::query('product');
+    //$product = Product::lists('name','id');
+    echo $param;
+    //return view('outputs.create',compact('product'));
   }
 
   /**
@@ -50,28 +48,7 @@ class EntriesController extends Controller
   */
   public function store(Request $request)
   {
-    $item = $request->all();
-    $item['users_id'] = Auth::user()->id;
-    if (Entries::create($item)) {
-      Product::find($item['products_id'])->increment('quantity',$item['quantity']);
-
-      /***********************************************************************************
-      *   Product::find($item['products_id'])->increment('quantity',$item['quantity']);
-      * -------------------------------------------------------------------------------------
-      *   Selecionando coluna especifica para update da mesma colando acima realiza o mesmo procedimento
-      *
-      *   $quantity = Product::where('id',$item['products_id'])->pluck('quantity');
-      *   $quantity += $item['quantity'];
-      *     Product::where('id',$item['products_id'])->update(['quantity'=> $quantity]);
-      *  $product['quantity'] += $item['quantity'];
-      *  $product->save();
-      */
-          Session::flash('message','Item inserido com sucesso');
-          return Redirect::to('entries');
-    }
-
-
-
+    //
   }
 
   /**
@@ -82,7 +59,7 @@ class EntriesController extends Controller
   */
   public function show($id)
   {
-    //
+
   }
 
   /**
@@ -105,7 +82,7 @@ class EntriesController extends Controller
   */
   public function update(Request $request, $id)
   {
-
+    //
   }
 
   /**

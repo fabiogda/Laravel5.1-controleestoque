@@ -7,7 +7,6 @@
   <thead>
     <th>Nome</th>
     <th>Preço</th>
-    <th>Quantidade</th>
     <th>Descrição</th>
     <th> Imagem </th>
     <th> Operações </th>
@@ -16,13 +15,13 @@
     <tbody>
       <td> {{$product->name}} </td>
       <td> R$ {{$product->price}}</td>
-      <td> {{$product->quantity}} Unidades </td>
       <td> {{$product->description}}</td>
       <td>
         <img src="img_produtos/{{$product->path}}" alt="Imagem do Produto Selecionado" style="width:100px;"/>
       </td>
       <td>
-       {!!link_to_route('product.edit', $title = ' Editar',$parameters  = $product->id, $atributes = ['class'=>'btn btn-primary fa fa-pencil'])!!}
+       {!!link_to_route('product.edit', $title = ' ',$parameters  = $product->id, $atributes = ['class'=>'btn btn-primary fa fa-pencil'])!!}
+       {!!link_to_route('product.edit', $title = ' ',$parameters  = $product->id, $atributes = ['class'=>'btn btn-danger fa fa-trash-o'])!!}
       </td>
     </tbody>
     @endforeach

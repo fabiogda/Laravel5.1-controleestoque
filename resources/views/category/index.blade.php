@@ -14,7 +14,8 @@
       <td> {{$category->id}} </td>
       <td> {{$category->name}}</td>
       <td>
-       {!!link_to_route('category.edit', $title = ' Editar',$parameters  = $category->id, $atributes = ['class'=>'btn btn-primary fa fa-pencil'])!!}
+       {!!link_to_route('category.edit', $title = ' ',$parameters  = $category->id, $atributes = ['class'=>'btn btn-primary fa fa-pencil'])!!}
+        {!!link_to_route('category.edit', $title = ' ',$parameters  = $category->id, $atributes = ['class'=>'btn btn-danger fa fa-trash-o'])!!}
       </td>
     </tbody>
     @endforeach
