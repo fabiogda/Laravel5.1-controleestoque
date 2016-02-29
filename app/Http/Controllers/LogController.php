@@ -1,14 +1,14 @@
 <?php
 
-namespace Estoque\Http\Controllers;
+namespace Stock\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Estoque\Http\Requests;
-use Estoque\Http\Requests\LoginRequest;
+use Stock\Http\Requests;
+use Stock\Http\Requests\LoginRequest;
 use Auth;
 use Session;
 use Redirect;
-use Estoque\Http\Controllers\Controller;
+use Stock\Http\Controllers\Controller;
 
 class LogController extends Controller
 {

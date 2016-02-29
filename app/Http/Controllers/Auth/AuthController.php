@@ -1,10 +1,10 @@
 <?php
 
-namespace Estoque\Http\Controllers\Auth;
+namespace Stock\Http\Controllers\Auth;
 
-use Estoque\User;
+use Stock\User;
 use Validator;
-use Estoque\Http\Controllers\Controller;
+use Stock\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

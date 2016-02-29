@@ -1,16 +1,17 @@
 <?php
-namespace Estoque\Http\Controllers;
-use Estoque\Http\Requests\UserCreateRequest;
-use Estoque\Http\Requests\UserUpdateRequest;
-use Estoque\Http\Controllers\Controller;
+namespace Stock\Http\Controllers;
+use Stock\Http\Requests\UserCreateRequest;
+use Stock\Http\Requests\UserUpdateRequest;
+use Stock\Http\Controllers\Controller;
 use Illuminate\Routing\Route;
 use Illuminate\Http\Request;
-use Estoque\Http\Requests;
-use Estoque\User;
+use Stock\Http\Requests;
+use Stock\User;
 use Redirect;
 use Session;
 use DB;
-class UsuarioController extends Controller
+
+class UsersController extends Controller
 {
       public function __construct(){
         $this->middleware('auth');
@@ -18,7 +19,7 @@ class UsuarioController extends Controller
         $this->beforeFilter('@find',['only' => ['edit','update','destroy']]);
     }
     public function find(Route $route){
-        $this->user = User::find($route->getParameter('usuario'));
+        $this->user = User::find($route->getParameter('users'));
         $this->notFound($this->user);
 
     }
@@ -30,7 +31,7 @@ class UsuarioController extends Controller
     public function index()
     {
       $users = User::paginate(5);
-      return view('usuario.index',compact('users'));
+      return view('users.index',compact('users'));
     }
     /**
      * Show the form for creating a new resource.
@@ -39,7 +40,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        return view('usuario.create');
+        return view('users.create');
     }
     /**
      * Store a newly created resource in storage.
@@ -51,7 +52,7 @@ class UsuarioController extends Controller
     {
               User::create($request->all());
               Session::flash('message','Usuario criado com sucesso');
-              return Redirect::to('/usuario');
+              return Redirect::to('/users');
             }
     /**
      * Display the specified resource.
@@ -71,7 +72,7 @@ class UsuarioController extends Controller
     public function edit($id)
     {
           $user = User::find($id);
-          return view('usuario.edit',['user'=>$user]);
+          return view('users.edit',['user'=>$user]);
     }
     /**
      * Update the specified resource in storage.
@@ -80,13 +81,13 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserUpdateRequest $request, $id) 
+    public function update(UserUpdateRequest $request, $id)
     {
           $user = User::find($id);
           $user->fill($request->all());
           $user->save();
         Session::flash('message','Usuario Atualizado Corretamente');
-         return Redirect::to('/usuario');
+         return Redirect::to('/users');
     }
     /**
      * Remove the specified resource from storage.
@@ -98,6 +99,6 @@ class UsuarioController extends Controller
     {
           User::destroy($id);
           Session::flash('message','Usuario excluido com sucesso');
-          return Redirect::to('/usuario');
+          return Redirect::to('/users');
     }
 }

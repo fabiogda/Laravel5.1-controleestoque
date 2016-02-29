@@ -1,6 +1,6 @@
 <?php
 
-namespace Estoque;
+namespace Stock;
 
 use Illuminate\Database\Eloquent\Model;
 

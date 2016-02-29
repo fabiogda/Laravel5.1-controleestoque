@@ -52,10 +52,10 @@
                             <a href="#"><i class="fa fa-users fa-fw"></i> Usuario<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{!!URL::to('/usuario/create')!!}"><i class='fa fa-plus fa-fw'></i>Registrar</a>
+                                    <a href="{!!URL::to('/users/create')!!}"><i class='fa fa-plus fa-fw'></i>Registrar</a>
                                 </li>
                                 <li>
-                                    <a href="{!!URL::to('/usuario')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Usuarios</a>
+                                    <a href="{!!URL::to('/users')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Usuarios</a>
                                 </li>
                             </ul>
                         </li>
@@ -64,10 +64,10 @@
                             <a href="#"><i class="fa fa-filter"> </i> Categoria <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{!!URL::to('/category/create/')!!}"><i class='fa fa-plus fa-fw'></i> Registrar uma categoria</a>
+                                    <a href="{!!URL::to('/categories/create/')!!}"><i class='fa fa-plus fa-fw'></i> Registrar uma categoria</a>
                                 </li>
                                 <li>
-                                    <a href="{!!URL::to('/category')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Categorias</a>
+                                    <a href="{!!URL::to('/categories')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Categorias</a>
                                 </li>
                             </ul>
                         </li>
@@ -75,10 +75,10 @@
                             <a href="#"><i class="fa fa-barcode"> </i> Produto<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{!!URL::to('/product/create')!!}"><i class='fa fa-plus fa-fw'></i> Registrar</a>
+                                    <a href="{!!URL::to('/products/create')!!}"><i class='fa fa-plus fa-fw'></i> Registrar</a>
                                 </li>
                                 <li>
-                                    <a href="{!!URL::to('/product')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Produtos</a>
+                                    <a href="{!!URL::to('/products')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Produtos</a>
                                 </li>
                             </ul>
                         </li>

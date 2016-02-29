@@ -1,19 +1,17 @@
 <?php
+namespace Stock\Http\Controllers;
 
-namespace Estoque\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-use Estoque\Http\Requests;
-use Estoque\Http\Controllers\Controller;
+use Stock\Http\Controllers\Controller;
 use Illuminate\Routing\Route;
-use Estoque\User;
-use Estoque\Category;
+use Illuminate\Http\Request;
+use Stock\Http\Requests;
 use Redirect;
 use Session;
-use DB;
+use Stock\Product;
+use Stock\Entries;
+use Stock\Category;
 
-class CategoryController extends Controller
+class ProductsController extends Controller
 {
   public function __construct(){
     $this->middleware('auth');
@@ -21,19 +19,19 @@ class CategoryController extends Controller
     $this->beforeFilter('@find',['only' => ['edit','update','destroy']]);
   }
       public function find(Route $route){
-          $this->category = Category::find($route->getParameter('category'));
-            $this->notFound($this->category);
-      }/**
+          $this->product = Product::find($route->getParameter('products'));
+            $this->notFound($this->product);
+      }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+  public function index()
     {
-      $category = Category::paginate(10);
-      return view('category.index',compact('category'));
+        $products = Product::paginate(5);
+        return view('products.index',compact('products'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -41,9 +39,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('category.create');
+      $category = Category::lists('name','id');
+      return view('products.create',compact('category'));
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -52,11 +50,10 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-      Category::create($request->all());
-      Session::flash('message','Categoria criada com sucesso');
-      return Redirect::to('/category');
+       Product::create($request->all());
+       Session::flash('message','Produto criado com sucesso');
+       return Redirect::to('/products');
     }
-
     /**
      * Display the specified resource.
      *
@@ -67,7 +64,6 @@ class CategoryController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -76,10 +72,10 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-      $category = Category::find($id);
-      return view('category.edit', ['category'=>$category]);
+        $category = Category::lists('name','id');
+        $product = Product::find($id);
+        return view('products.edit',compact('category'), ['product'=>$product]);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -89,13 +85,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-            $category = Category::find($id);
-            $category = filll($Request->all());
-            $category->save();
-            Session::flash('message','Categoria atualizada com sucesso');
-            return  Redirect::to('/category');
+        $product = Product::find($id);
+        $product->fill($request->all());
+        $product->save();
+        Session::flash('message','Produto atualizado com sucesso');
+        return Redirect::to('/products');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -104,8 +99,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        Category::destroy($id);
-        Session::flash('message','Categoria excluida com sucesso');
-        return Redirect::to('/category');
+        Product::destroy($id);
+        Session::flash('message','Produto excluido com sucesso');
+        return Redirect::to('/products');
     }
 }

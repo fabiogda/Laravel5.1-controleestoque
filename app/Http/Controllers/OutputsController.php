@@ -1,16 +1,17 @@
 <?php
 
-namespace Estoque\Http\Controllers;
+namespace Stock\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Estoque\Http\Requests;
-use Estoque\Http\Controllers\Controller;
+use Stock\Http\Requests;
+use Stock\Http\Controllers\Controller;
 use Illuminate\Routing\Route;
-use Estoque\User;
-use Estoque\Product;
-use Estoque\Entries;
-use Estoque\Outputs;
+use Stock\User;
+use Stock\Product;
+use Stock\Entry;
+use Stock\Output;
+use Stock\Category;
 use Redirect;
 use Session;
 use DB;
@@ -25,7 +26,11 @@ class OutputsController extends Controller
   */
   public function index()
   {
-    return view('outputs.index');
+
+    $outputs = Output::paginate(5);
+  //  dd($outputs->product->name);
+   return view('outputs.index',compact('outputs'));
+
   }
   /**
   * Show the form for creating a new resource.
@@ -34,10 +39,8 @@ class OutputsController extends Controller
   */
   public function create()
   {
-    $param = Request::query('product');
-    //$product = Product::lists('name','id');
-    echo $param;
-    //return view('outputs.create',compact('product'));
+    //
+
   }
 
   /**
@@ -48,7 +51,14 @@ class OutputsController extends Controller
   */
   public function store(Request $request)
   {
-    //
+
+    $sale = $request->all();
+    $sale['user_id'] = Auth::user()->id;
+    if (Output::create($sale)) {
+      Product::find($sale['product_id'])->decrement('quantity',$sale['quantity']);
+      Session::flash('message','Venda concluida');
+      return Redirect::to('outputs');
+    }
   }
 
   /**
@@ -57,7 +67,7 @@ class OutputsController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function show($id)
+  public function show()
   {
 
   }
@@ -70,7 +80,7 @@ class OutputsController extends Controller
   */
   public function edit($id)
   {
-    //
+    return view('outputs.edit',['product'=> Product::findOrFail($id)]);
   }
 
   /**

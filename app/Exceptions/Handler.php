@@ -1,6 +1,6 @@
 <?php
 
-namespace Estoque\Exceptions;
+namespace Stock\Exceptions;
 
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;

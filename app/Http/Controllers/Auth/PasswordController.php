@@ -1,8 +1,8 @@
 <?php
 
-namespace Estoque\Http\Controllers\Auth;
+namespace Stock\Http\Controllers\Auth;
 
-use Estoque\Http\Controllers\Controller;
+use Stock\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

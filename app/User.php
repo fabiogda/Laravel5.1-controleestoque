@@ -1,6 +1,6 @@
 <?php
 
-namespace Estoque;
+namespace Stock;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -43,4 +43,10 @@ public function setPasswordAttribute($valor){
           $this->attributes['password'] = \Hash::make($valor);
       }
     }
+    public function outputs(){
+
+        return $this->hasmany('Stock\Output');
+
+    }
+
   }

@@ -17,11 +17,13 @@ Route::get('/', function () {
 
 Route::get('admin','FrontController@admin');
 
-Route::resource('usuario','UsuarioController');
-Route::resource('product','ProductController');
+Route::resource('users','UsersController');
+Route::resource('products','ProductsController');
 Route::resource('entries','EntriesController');
+
+
 Route::resource('outputs','OutputsController');
-Route::resource('category','CategoryController');
+Route::resource('categories','CategoriesController');
 
 
 Route::get('logout','LogController@logout');

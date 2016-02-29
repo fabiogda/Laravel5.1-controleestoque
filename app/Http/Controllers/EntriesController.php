@@ -1,16 +1,16 @@
 <?php
 
-namespace Estoque\Http\Controllers;
+namespace Stock\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Estoque\Http\Requests;
-use Estoque\Http\Controllers\Controller;
+use Stock\Http\Requests;
+use Stock\Http\Controllers\Controller;
 use Illuminate\Routing\Route;
-use Estoque\User;
-use Estoque\Product;
-use Estoque\Entries;
-use Estoque\Outputs;
+use Stock\User;
+use Stock\Product;
+use Stock\Entry;
+use Stock\Output;
 use Redirect;
 use Session;
 use DB;
@@ -51,9 +51,9 @@ class EntriesController extends Controller
   public function store(Request $request)
   {
     $item = $request->all();
-    $item['users_id'] = Auth::user()->id;
-    if (Entries::create($item)) {
-      Product::find($item['products_id'])->increment('quantity',$item['quantity']);
+    $item['user_id'] = Auth::user()->id;
+      if (Entry::create($item)) {
+      Product::find($item['product_id'])->increment('quantity',$item['quantity']);
 
       /***********************************************************************************
       *   Product::find($item['products_id'])->increment('quantity',$item['quantity']);

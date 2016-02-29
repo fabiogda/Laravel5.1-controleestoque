@@ -1,6 +1,6 @@
 <?php
 
-namespace Estoque\Providers;
+namespace Stock\Providers;
 
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'Estoque\Model' => 'Estoque\Policies\ModelPolicy',
+        'Stock\Model' => 'Stock\Policies\ModelPolicy',
     ];
 
     /**

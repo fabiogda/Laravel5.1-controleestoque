@@ -1,6 +1,6 @@
 <?php
 
-namespace Estoque\Console\Commands;
+namespace Stock\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

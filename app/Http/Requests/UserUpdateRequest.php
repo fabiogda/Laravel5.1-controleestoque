@@ -1,8 +1,8 @@
 <?php
 
-namespace Estoque\Http\Requests;
+namespace Stock\Http\Requests;
 
-use Estoque\Http\Requests\Request;
+use Stock\Http\Requests\Request;
 
 class UserUpdateRequest extends Request
 {

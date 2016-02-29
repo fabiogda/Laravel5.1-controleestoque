@@ -1,13 +1,14 @@
 <?php
 
-namespace Estoque;
+namespace Stock;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 use DB;
 
 
-class product extends Model
+
+class Product extends Model
 {
     protected $table = "products";
     protected $fillable = ['category_id','name','price','quantity','description','path'];
@@ -19,4 +20,16 @@ class product extends Model
   			\Storage::disk('local')->put($name, \File::get($path));
         }
     }
+
+      public function outputs(){
+
+          return $this->hasmany('Stock\Output');
+
+      }
+
+      public function entries(){
+
+          return $this->hasmany('Stock\Entry');
+
+      }
 }

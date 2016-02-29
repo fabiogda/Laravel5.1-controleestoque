@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(Estoque\User::class, function (Faker\Generator $faker) {
+$factory->define(Stock\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,

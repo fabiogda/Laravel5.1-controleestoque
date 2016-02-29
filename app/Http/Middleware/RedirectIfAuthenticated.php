@@ -1,6 +1,6 @@
 <?php
 
-namespace Estoque\Http\Middleware;
+namespace Stock\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

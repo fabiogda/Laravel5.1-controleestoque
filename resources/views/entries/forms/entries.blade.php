@@ -1,6 +1,6 @@
 <div class="form-group">
-	{!!Form::label('products_id','Nome do produto')!!}
-	{!!Form::select('products_id',$product)!!}
+	{!!Form::label('product_id','Nome do produto')!!}
+	{!!Form::select('product_id',$product)!!}
 </div>
 <div class="form-group">
 	{!!Form::label('quantity','Quantidade')!!}

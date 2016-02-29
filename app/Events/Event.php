@@ -1,6 +1,6 @@
 <?php
 
-namespace Estoque\Events;
+namespace Stock\Events;
 
 abstract class Event
 {

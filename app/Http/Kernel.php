@@ -1,6 +1,6 @@
 <?php
 
-namespace Estoque\Http;
+namespace Stock\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -13,11 +13,11 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-        \Estoque\Http\Middleware\EncryptCookies::class,
+        \Stock\Http\Middleware\EncryptCookies::class,
         \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        \Estoque\Http\Middleware\VerifyCsrfToken::class,
+        \Stock\Http\Middleware\VerifyCsrfToken::class,
     ];
 
     /**
@@ -26,9 +26,9 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \Estoque\Http\Middleware\Authenticate::class,
+        'auth' => \Stock\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'guest' => \Estoque\Http\Middleware\RedirectIfAuthenticated::class,
-        'admin' => \Estoque\Http\Middleware\Admin::class,
+        'guest' => \Stock\Http\Middleware\RedirectIfAuthenticated::class,
+        'admin' => \Stock\Http\Middleware\Admin::class,
     ];
 }

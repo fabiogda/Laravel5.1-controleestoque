@@ -1,6 +1,6 @@
 <?php
 
-namespace Estoque\Jobs;
+namespace Stock\Jobs;
 
 use Illuminate\Bus\Queueable;
 

@@ -2,7 +2,7 @@
 @extends('layouts.admin')
 	@section('content')
 	{!!Form::model($user,['route'=>['users.update',$user],'method'=>'PUT'])!!}
-		@include('usuario.forms.usr')
+		@include('users.forms.usr')
 		{!!Form::submit('Atualizar',['class'=>'btn btn-primary'])!!}
 	{!!Form::close()!!}
 <br>

@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: Estoque
-        psr4_prefix: Estoque
+        namespace: Stock
+        psr4_prefix: Stock
         src_path: app

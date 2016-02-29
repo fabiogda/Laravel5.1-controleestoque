@@ -1,6 +1,6 @@
 <?php
 
-namespace Estoque\Providers;
+namespace Stock\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

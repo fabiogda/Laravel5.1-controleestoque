@@ -1,11 +1,11 @@
 <?php
 
-namespace Estoque\Http\Controllers;
+namespace Stock\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Estoque\Http\Requests;
-use Estoque\Http\Controllers\Controller;
+use Stock\Http\Requests;
+use Stock\Http\Controllers\Controller;
 
 class FrontController extends Controller
 {

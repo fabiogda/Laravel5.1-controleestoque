@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 	@section('content')
 
-	{!!Form::model($category,['route'=> ['category.update',$category->id],'method'=>'PUT'])!!}
-	@include('category.forms.category')
+	{!!Form::model($category,['route'=> ['categories.update',$category->id],'method'=>'PUT'])!!}
+	@include('categories.forms.category')
 	{!!Form::submit('Atualizar',['class'=>'btn btn-primary'])!!}
 		{!!Form::close()!!}
 <br>
-{!!Form::open(['route'=> ['category.destroy',$category->id],'method'=>'DELETE'])!!}
+{!!Form::open(['route'=> ['categories.destroy',$category->id],'method'=>'DELETE'])!!}
 		{!!Form::submit('Deletar',['class'=>'btn btn-danger'])!!}
 {!!Form::close()!!}
 

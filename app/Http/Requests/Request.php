@@ -1,6 +1,6 @@
 <?php
 
-namespace Estoque\Http\Requests;
+namespace Stock\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
