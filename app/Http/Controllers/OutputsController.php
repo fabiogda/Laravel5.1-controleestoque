@@ -27,9 +27,8 @@ class OutputsController extends Controller
   public function index()
   {
 
-    $outputs = Output::paginate(5);
-  //  dd($outputs->product->name);
-   return view('outputs.index',compact('outputs'));
+    $outputs = Output::with('product','user')->paginate(5);
+    return view('outputs.index',compact('outputs'));
 
   }
   /**
