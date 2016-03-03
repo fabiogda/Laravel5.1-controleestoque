@@ -23,8 +23,8 @@
     {!!Form::open(['route'=>'outputs.store','method'=>'POST'])!!}
     {!!Form::hidden('product_id',$product->id,(['id'=> 'product_id']))!!}
     @include('outputs.forms.sale')
-    {!!Form::submit('Vender',['class'=>'btn btn-success'])!!}
-    <a href="/entries"><i class='btn btn-primary fa fa-undo'>  Voltar</i></a>
+    {!!Form::submit('Vender',['class'=>'btn btn-success','data-toggle'=>'tooltip','title'=>'Vender'])!!}
+    <a href="/entries"><i class='btn btn-primary fa fa-undo' data-toggle="tooltip" title="Pagina anterior">  Voltar</i></a>
     {!!Form::close()!!}
   </div>
   </div>

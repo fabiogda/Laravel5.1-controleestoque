@@ -8,5 +8,4 @@
 		{!!Form::open(['route'=> ['products.destroy',$product->id],'method'=>'DELETE'])!!}
 				{!!Form::submit('Deletar',['class'=>'btn btn-danger'])!!}
 		{!!Form::close()!!}
-
 	@endsection

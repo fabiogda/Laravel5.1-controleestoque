@@ -21,7 +21,7 @@
         <img src="img_produtos/{{$product->path}}" alt="Imagem do Produto Selecionado" style="width:100px;"/>
       </td>
       <td>
-        {!!link_to_route('outputs.edit', $title = ' ',$parameters = $product->id, $atributes = ['class'=>'btn btn-warning fa fa-cart-plus'])!!}
+        {!!link_to_route('outputs.edit', $title = ' ',$parameters = $product->id, $atributes = ['class'=>'btn btn-warning fa fa-cart-plus','data-toggle'=>'tooltip','title'=>'Vender Produto'])!!}
       </td>
     </tbody>
     @endforeach

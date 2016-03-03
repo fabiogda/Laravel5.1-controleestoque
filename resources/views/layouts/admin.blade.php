@@ -86,7 +86,10 @@
                             <a href="#"><i class="fa fa-table"> </i> Estoque <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{!!URL::to('/entries/create')!!}"><i class='fa fa-plus fa-fw'></i> Adicionar item</a>
+                                    <a href="{!!URL::to('/entries/create')!!}"><i class='fa fa-plus fa-fw'></i> Adicionar Item</a>
+                                </li>
+                                <li>
+                                    <a href="{!!URL::to('/entrielist')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Entradas</a>
                                 </li>
                                 <li>
                                     <a href="{!!URL::to('/entries')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Estoque</a>

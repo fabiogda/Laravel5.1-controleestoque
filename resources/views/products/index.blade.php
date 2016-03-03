@@ -23,8 +23,8 @@
       <img src="img_produtos/{{$product->path}}" alt="Imagem do Produto Selecionado" style="width:100px;"/>
       </td>
       <td>
-       {!!link_to_route('products.edit', $title = ' ',$parameters  = $product->id, $atributes = ['class'=>'btn btn-primary fa fa-pencil'])!!}
-       {!!link_to_route('products.edit', $title = ' ',$parameters  = $product->id, $atributes = ['class'=>'btn btn-danger fa fa-trash-o'])!!}
+       {!!link_to_route('products.edit', $title = ' ',$parameters  = $product->id, $atributes = ['class'=>'btn btn-primary fa fa-pencil','data-toggle'=>'tooltip','title'=>'Editar Produto'])!!}
+       {!!link_to_route('products.edit', $title = ' ',$parameters  = $product->id, $atributes = ['class'=>'btn btn-danger fa fa-trash-o','data-toggle'=>'tooltip','title'=>'Deletar produto'])!!}
       </td>
     </tr>
     </tbody>

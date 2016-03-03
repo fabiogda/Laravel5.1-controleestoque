@@ -102,6 +102,9 @@ class OutputsController extends Controller
   */
   public function destroy($id)
   {
-    //
+    Output::destroy($id);
+    Session::flash('message','Saida de produto excluido com sucesso');
+    return Redirect::to('/outputs');
+
   }
 }

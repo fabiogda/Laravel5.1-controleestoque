@@ -31,6 +31,13 @@ class EntriesController extends Controller
 
   }
 
+  public function entrielist(){
+
+    $entries = Entry::with('product','user')->paginate(5);
+    return view('entries.entrielist',compact('entries'));
+
+  }
+
   /**
   * Show the form for creating a new resource.
   *
@@ -114,8 +121,12 @@ class EntriesController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function destroy($id)
+  public function destroy(Request $request , $id)
   {
-    //
+      Entry::destroy($id);
+      Session::flash('message','Entrada de item excluido com sucesso');
+      return Redirect::to('/entrielist');
+
+
   }
 }
