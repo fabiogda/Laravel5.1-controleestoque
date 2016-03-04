@@ -54,7 +54,7 @@ class CategoriesController extends Controller
     {
       Category::create($request->all());
       Session::flash('message','Categoria criada com sucesso');
-      return Redirect::to('/categories');
+      return Redirect::to('products/create');
     }
 
     /**

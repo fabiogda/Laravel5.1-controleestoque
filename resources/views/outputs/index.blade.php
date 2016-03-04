@@ -20,10 +20,10 @@
         <td> {{$output->quantity}} </td>
         <td>
           {!!Form::open(['route'=> ['outputs.destroy',$output->id],'method'=>'DELETE'])!!}
-          {!! Form::button('Deletar',['class' => 'btn btn-danger','data-toggle' => 'modal',
+          {!! Form::button('',['class' => 'btn btn-danger fa fa-trash-o','data-toggle' => 'modal',
                 'data-target' => '#confirm',
                 'data-title' => 'Delete Package Type',
-                'data-message' => 'Deseja Realmente Deletar Venda?'])
+                'data-message' => 'Excluir Registro?'])
           !!}
           @include('alerts.delete_confirm')
         	{!!Form::close()!!}
