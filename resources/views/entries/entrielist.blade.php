@@ -16,7 +16,7 @@
       <td> {{$entrie->quantity}} Unidades</td>
       <td>
         {!!Form::open(['route'=> ['entries.destroy',$entrie->id],'method'=>'DELETE'])!!}
-        {!! Form::button('Deletar',['class' => 'btn btn-danger','data-toggle' => 'modal',
+        {!! Form::button(' Deletar',['class' => 'btn btn-danger fa fa-trash-o ','data-toggle' => 'modal',
               'data-target' => '#confirm',
               'data-title' => 'Delete Package Type',
               'data-message' => 'Deseja Realmente Deletar Venda?'])

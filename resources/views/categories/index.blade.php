@@ -17,8 +17,7 @@
       <td> {{$category->id}} </td>
       <td> {{$category->name}}</td>
       <td>
-       {!!link_to_route('categories.edit', $title = ' ',$parameters  = $category->id, $atributes = ['class'=>'btn btn-primary fa fa-pencil','data-toggle'=>'tooltip','title'=>'Editar categoria'])!!}
-        {!!link_to_route('categories.edit', $title = ' ',$parameters  = $category->id, $atributes = ['class'=>'btn btn-danger fa fa-trash-o','data-toggle'=>'tooltip','title'=>'Deletar categoria'])!!}
+       {!!link_to_route('categories.edit', $title = ' Ajustes',$parameters  = $category->id, $atributes = ['class'=>'btn btn-success fa fa-cog','data-toggle'=>'tooltip','title'=>'Editar categoria'])!!}
       </td>
     </tr>
     </tbody>

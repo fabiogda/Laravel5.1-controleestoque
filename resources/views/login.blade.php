@@ -11,7 +11,7 @@
   {!!Form::label('password','Senha')!!}
   {!!Form::password('password',['class'=>'form-control', 'placeholder'=>'Password'])!!}
   </div>
-  {!!Form::submit('Entrar',['class'=>'btn btn-success'])!!}
+  {!!Form::submit('Entrar',['class'=>'btn btn-primary'])!!}
   {!!Form::close()!!}
   </div>
 	@endsection
