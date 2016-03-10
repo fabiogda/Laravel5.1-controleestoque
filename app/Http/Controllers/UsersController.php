@@ -97,7 +97,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-          User::destroy($id);
+      
+          User::destroy($id)->with('output','entrie')->forceDelete();
           Session::flash('message','Usuario excluido com sucesso');
           return Redirect::to('/users');
     }

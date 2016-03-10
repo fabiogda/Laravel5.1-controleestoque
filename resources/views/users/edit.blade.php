@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 	@section('content')
+	@include('alerts.alerts_campo')
 			{!!Form::model($user,['route'=> ['users.update',$user->id],'method'=>'PUT'])!!}
 			@include('users.forms.usr')
 			{!!Form::submit(' Atualizar',['class'=>'btn btn-primary'])!!}

@@ -1,4 +1,5 @@
 @extends('layouts.login')
+@include('alerts.alerts_campo')
 	@section('content')
   <h3 class="fa fa-sign-in"> Login Area</h3>
   </div>
