@@ -18,7 +18,7 @@
       <td> {{$product->quantity}} Unidades</td>
       <td> {{$product->description}} </td>
       <td>
-        <img src="img_produtos/{{$product->path}}" alt="Imagem do Produto Selecionado" style="width:100px;"/>
+        <img src="img_produtos/{{$product->path}}" alt="Produto não possue imagem" style="width:100px;"/>
       </td>
       <td>
         {!!link_to_route('outputs.edit', $title = ' Vender ',$parameters = $product->id, $atributes = ['class'=>'btn btn-warning fa fa-cart-plus','data-toggle'=>'tooltip','title'=>'Vender Produto'])!!}

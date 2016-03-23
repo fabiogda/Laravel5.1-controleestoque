@@ -15,4 +15,5 @@
 !!}
 @include('alerts.delete_confirm')
 {!!Form::close()!!}
+<br>
 	@endsection

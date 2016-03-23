@@ -56,6 +56,9 @@
                                 <li>
                                     <a href="{!!URL::to('/users')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Usuarios</a>
                                 </li>
+                                <li>
+                                    <a href="{!!URL::to('user/inactive')!!}"><i class='fa fa-list-ol fa-fw'></i> Usuarios inativos</a>
+                                </li>
                             </ul>
                         </li>
                         @endif
@@ -66,7 +69,10 @@
                                     <a href="{!!URL::to('/categories/create/')!!}"><i class='fa fa-plus fa-fw'></i> Registrar uma categoria</a>
                                 </li>
                                 <li>
-                                    <a href="{!!URL::to('/categories')!!}"><i class='fa fa-list-ol fa-fw'></i> Listar Categorias</a>
+                                    <a href="{!!URL::to('/categories')!!}"><i class='fa fa-list-ol fa-fw'></i> Categorias Ativas</a>
+                                </li>
+                                <li>
+                                    <a href="{!!URL::to('categorie/inactive')!!}"><i class='fa fa-list-ol fa-fw'></i> Categorias inativas</a>
                                 </li>
                             </ul>
                         </li>

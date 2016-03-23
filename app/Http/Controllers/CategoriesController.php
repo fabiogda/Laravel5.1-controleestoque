@@ -15,12 +15,7 @@ use DB;
 
 class CategoriesController extends Controller
 {
-  public function __construct(){
-    $this->middleware('auth');
-    $this->middleware('admin');
-    $this->beforeFilter('@find',['only' => ['edit','update','destroy']]);
-  }
-      public function find(Route $route){
+        public function find(Route $route){
           $this->category = Category::find($route->getParameter('categories'));
             $this->notFound($this->category);
       }/**
@@ -30,9 +25,16 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-      $category = Category::paginate(10);
-      return view('categories.index',compact('category'));
+      $categorys = DB::table('categories')->where('activated', '=' , 1 )->paginate(5);
+      return view('categories.index',compact('categorys'));
     }
+    public function inactive()
+  {
+
+    $categorys = DB::table('categories')->where('activated', '=' , 0 )->paginate(5);
+    return view('categories.inactive',compact('categorys'));
+
+  }
 
     /**
      * Show the form for creating a new resource.
@@ -90,7 +92,7 @@ class CategoriesController extends Controller
     public function update(Request $request, $id)
     {
             $category = Category::find($id);
-            $category = filll($Request->all());
+            $category->fill($request->all());
             $category->save();
             Session::flash('message','Categoria atualizada com sucesso');
             return  Redirect::to('/categories');

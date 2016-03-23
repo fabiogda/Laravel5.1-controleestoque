@@ -30,8 +30,21 @@ class UsersController extends Controller
      */
     public function index()
     {
-      $users = User::paginate(5);
-      return view('users.index',compact('users'));
+        // selecionando tabelas em especificos
+      $users = DB::table('users')
+      ->Where('activated','=',  1)
+      ->paginate(10);
+
+        return view('users.index',compact('users'));
+    }
+    public function inactive(){
+
+        $users = DB::table('users')
+      ->Where('activated','=',  0)
+      ->paginate(10);
+
+        return view('users.inactive',compact('users'));
+
     }
     /**
      * Show the form for creating a new resource.
@@ -89,6 +102,10 @@ class UsersController extends Controller
         Session::flash('message','Usuario Atualizado Corretamente');
          return Redirect::to('/users');
     }
+
+
+
+
     /**
      * Remove the specified resource from storage.
      *
@@ -97,7 +114,7 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-      
+
           User::destroy($id)->with('output','entrie')->forceDelete();
           Session::flash('message','Usuario excluido com sucesso');
           return Redirect::to('/users');

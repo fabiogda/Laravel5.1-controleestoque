@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 @include('alerts.success')
 @section('content')
-<div class="panel panel-default">
-  <div class="panel-heading"><b style="margin-left:40%;text-decoration: underline;">Catalogo de Produtos</b></div>
+<div class="panel ">
+<b style="margin-left:40%;">Catalogo de Produtos</b>
   <table class="table">
     <thead>
       <tr>
@@ -20,7 +20,7 @@
         <td> R$ {{$product->price}}</td>
         <td> {{$product->description}}</td>
         <td>
-          <img src="img_produtos/{{$product->path}}" alt="Imagem do Produto Selecionado" style="width:100px;"/>
+          <img src="img_produtos/{{$product->path}}" alt="Não prossue imagem" style="width:100px;"/>
         </td>
         <td>
           {!!link_to_route('products.edit', $title = ' Ajustes ',$parameters  = $product->id, $atributes = ['class'=>'btn btn-success fa fa-cog','data-toggle'=>'tooltip','title'=>'Editar Produto'])!!}

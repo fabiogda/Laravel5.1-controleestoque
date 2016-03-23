@@ -123,9 +123,9 @@ class EntriesController extends Controller
   */
   public function destroy(Request $request , $id)
   {
-      Entry::destroy($id);
-      Session::flash('message','Entrada de item excluido com sucesso');
-      return Redirect::to('/entrielist');
+        Entry::destroy($id);
+        Session::flash('message','Entrada de item excluido com sucesso');
+            return Redirect::to('/entrielist');
 
 
   }

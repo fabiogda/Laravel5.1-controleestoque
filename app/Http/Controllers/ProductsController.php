@@ -10,14 +10,11 @@ use Session;
 use Stock\Product;
 use Stock\Entries;
 use Stock\Category;
+use DB;
 
 class ProductsController extends Controller
 {
-  public function __construct(){
-    $this->middleware('auth');
-    $this->middleware('admin');
-    $this->beforeFilter('@find',['only' => ['edit','update','destroy']]);
-  }
+
   public function find(Route $route){
     $this->product = Product::find($route->getParameter('products'));
     $this->notFound($this->product);
@@ -29,6 +26,7 @@ class ProductsController extends Controller
   */
   public function index()
   {
+
     $products = Product::paginate(5);
     return view('products.index',compact('products'));
   }

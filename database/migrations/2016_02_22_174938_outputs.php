@@ -18,6 +18,7 @@ class Outputs extends Migration
         $table->foreign('product_id')->references('id')->on('products');
         $table->integer('user_id')->unsigned();
         $table->foreign('user_id')->references('id')->on('users');
+        $table->dropForeign('product_user_id_foreign');
         $table->integer('quantity');
         $table->timestamps();
       });

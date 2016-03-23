@@ -21,6 +21,10 @@ Route::resource('users','UsersController');
 Route::resource('products','ProductsController');
 Route::resource('entries','EntriesController');
 Route::resource('entrielist','EntriesController@entrielist');
+
+Route::resource('user/inactive','UsersController@inactive');
+Route::resource('categorie/inactive','CategoriesController@inactive');
+
 Route::resource('outputs','OutputsController');
 Route::resource('categories','CategoriesController');
 
